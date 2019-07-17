@@ -6,9 +6,10 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"supconcloud/rtspproxy/videostream"
-	"supconcloud/rtspproxy/websocket"
 	"sync"
+
+	"github.com/tectiv3/rtspproxy/videostream"
+	"github.com/tectiv3/rtspproxy/websocket"
 
 	"github.com/gobwas/ws"
 )
@@ -112,7 +113,7 @@ func (s *RtspServer) Close(endpoint *websocket.Endpoint) {
 func (s *RtspServer) WebSocketEntry(w http.ResponseWriter, r *http.Request) {
 	responseHeader := http.Header{}
 	responseHeader.Add("Sec-WebSocket-Protocol", r.Header.Get("Sec-WebSocket-Protocol"))
-	conn, _, _, err := ws.UpgradeHTTP(r, w, responseHeader)
+	conn, _, _, err := ws.UpgradeHTTP(r, w)
 	if err != nil {
 		log.Printf("ws.UpgradeHTTP failed, err:%s", err.Error())
 		return

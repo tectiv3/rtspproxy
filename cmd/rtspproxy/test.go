@@ -36,7 +36,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 func echo(w http.ResponseWriter, r *http.Request) {
 	responseHeader := http.Header{}
 	responseHeader.Add("Sec-WebSocket-Protocol", r.Header.Get("Sec-WebSocket-Protocol"))
-	conn, _, _, err := ws.UpgradeHTTP(r, w, responseHeader)
+	conn, _, _, err := ws.UpgradeHTTP(r, w)
 	if err != nil {
 		log.Printf("ws.UpgradeHTTP failed, err:%s", err.Error())
 		return

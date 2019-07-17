@@ -4,7 +4,8 @@ import (
 	"flag"
 	"log"
 	"net/http"
-	"supconcloud/rtspproxy/rtspserver"
+
+	"github.com/tectiv3/rtspproxy/rtspserver"
 )
 
 var rtspServerURL = "192.168.11.124:8554"

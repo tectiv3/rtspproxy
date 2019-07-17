@@ -1,4 +1,4 @@
 #!/bin/sh
 
-go build supconcloud/rtspproxy/cmd/rtspproxy
+go build tectiv3/rtspproxy/cmd/rtspproxy
 

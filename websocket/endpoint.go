@@ -3,7 +3,8 @@ package websocket
 import (
 	"log"
 	"net"
-	"supconcloud/rtspproxy/videostream"
+
+	"github.com/tectiv3/rtspproxy/videostream"
 
 	"github.com/gobwas/ws"
 	"github.com/gobwas/ws/wsutil"
